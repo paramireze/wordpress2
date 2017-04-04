@@ -12,4 +12,17 @@ if ( !function_exists( 'child_theme_configurator_css' ) ):
 endif;
 add_action( 'wp_enqueue_scripts', 'child_theme_configurator_css' );
 
-// END ENQUEUE PARENT ACTION
+function dwwp_alter_movies_icon( $args ) {
+# this does not work. He said he already set up a custom hook???
+    $args['menu_icon'] = 'dashicons-tickets';
+    return $args;
+}
+
+add_filter('dwwp_post_type_args', 'dwwp_alter_movies_icon');
+
+function dwwp_change_label( $plural ) {
+    $plural = 'Booookz';
+    return $plural;
+}
+
+add_filter('dwwp_label_plural', 'dwwp_change_label');
