@@ -46,10 +46,10 @@ function dwwp_register_post_type()
             'feeds'         => true
         ),
         'supports' => array (
-            'title',
-            'editor',
-            'author',
-            'custom-fields'
+            'title'
+//            'editor',
+//            'author',
+//            'custom-fields'
         )
     );
 

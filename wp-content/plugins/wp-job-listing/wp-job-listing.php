@@ -15,3 +15,5 @@ if (!defined('ABSPATH')) {
 }
 
 require ( plugin_dir_path(__FILE__) .'wp-job-cpt.php' );
+require ( plugin_dir_path(__FILE__) .'wp-job-render-admin.php' );
+require ( plugin_dir_path(__FILE__) .'wp-job-fields.php' );
