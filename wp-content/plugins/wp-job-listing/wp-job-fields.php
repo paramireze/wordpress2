@@ -30,6 +30,36 @@
                 </div>
             </div>
         </div>
+        <div>
+            <div class="meta-row">
+                <div class="meta-th">
+                    <label for="job-title" class="dwwp-row-title">Job Title</label>
+                </div>
+                <div class="meta-td">
+                    <input type="textarea" name="job_title" id="job_title" value="<?php if ( !empty($dwwp_stored_meta['job_title'])) { echo esc_attr( $dwwp_stored_meta['job_title'][0]); } ?>">
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="meta-row">
+                <div class="meta-th">
+                    <label for="date_listed" class="dwwp-row-title">Date Listed</label>
+                </div>
+                <div class="meta-td">
+                    <input type="text" name="date_listed" class="datepicker" id="date_listed" value="<?php if ( !empty($dwwp_stored_meta['date_listed'])) { echo esc_attr( $dwwp_stored_meta['date_listed'][0]); } ?>">
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="meta-row">
+                <div class="meta-th">
+                    <label for="application_deadline" class="dwwp-row-title">Application Deadline</label>
+                </div>
+                <div class="meta-td">
+                    <input type="text" name="application_deadline" class="datepicker" id="application_deadline" value="<?php if ( !empty($dwwp_stored_meta['application_deadline'])) { echo esc_attr( $dwwp_stored_meta['application_deadline'][0]); } ?>">
+                </div>
+            </div>
+        </div>
         <div class="meta">
             <div class="meta-th">
                 <span>Principle Duties</span>
@@ -62,6 +92,16 @@
         if (isset($_POST['job_id'] )) {
             update_post_meta($post_id, 'job_id', sanitize_text_field($_POST['job_id']));
         }
+        if (isset($_POST['job_title'] )) {
+            update_post_meta($post_id, 'job_title', sanitize_text_field($_POST['job_title']));
+        }
+        if (isset($_POST['date_listed'] )) {
+            update_post_meta($post_id, 'date_listed', sanitize_text_field($_POST['date_listed']));
+        }
+        if (isset($_POST['application_deadline'] )) {
+            update_post_meta($post_id, 'application_deadline', sanitize_text_field($_POST['application_deadline']));
+        }
+
         if (isset($_POST['principle_duties'] )) {
             update_post_meta($post_id, 'principle_duties', sanitize_text_field($_POST['principle_duties']));
         }

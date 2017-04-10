@@ -3,8 +3,8 @@
  * Plugin Name: WP Job Listing
  * Plugin URI: http://hatrackmedia.com
  * Description: This plugins allows you to add a simple job listing section to your wordpress website.
- * Author: Bobby Bryant
- * Author URI: http://hatrackmedia.com
+ * Author: Paul Ramirez
+ * Author URI: https://github.com/paramireze/wordpress2
  * Version: 0.0.1
  * License: GPLv2
  */
