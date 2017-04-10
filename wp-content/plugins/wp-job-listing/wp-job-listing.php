@@ -29,3 +29,18 @@ function dwwp_admin_enqueue_scripts() {
 }
 add_action('admin_enqueue_scripts', 'dwwp_admin_enqueue_scripts', 'jquery-style', 'dwwp-custom-quicktags');
 
+function dwwp_add_submenu_page() {
+    add_submenu_page(
+        'edit.php?post_type=job',
+        'Reorder Jobs',
+        'Reorder Jobs',
+        'manage_options',
+        'reorder_jobs',
+        'reorder_admin_jobs_callback'
+    );
+
+}
+
+add_action('admin_menu', 'dwwp_add_submenu_page');
+
+
