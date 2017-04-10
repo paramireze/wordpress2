@@ -15,6 +15,7 @@ function dwwp_add_submenu_page() {
 add_action('admin_menu', 'dwwp_add_submenu_page');
 
 function reorder_admin_jobs_callback() {
+    global $typenow, $pagenow;
     $args = array(
 //        'post_type' => 'job',
 //        'orderby' => 'menu_order',
@@ -34,13 +35,20 @@ function reorder_admin_jobs_callback() {
                 <p><?php _e('<strong>Note:</strong> this only affects the jobs listed using the shortcodes functions') ?></p>
                 <ul id="custom-type-list">
                     <?php while ($job_listing->have_posts()) : $job_listing->the_post(); ?>
-                        <li id="<?php the_id(); ?>"><?php the_title(); ?></li>
+                        <li id="<?php esc_attr(the_id()); ?>"><?php esc_html(the_title()); ?></li>
                     <?php endwhile; ?>
                 </ul>
                 <p><?php else: _e( 'You have no Jobs to sort.', 'wp-job-listing'); ?></p>
             <?php endif; ?>
     </div>
     <?php
+    echo '<pre>';
+    var_dump($typenow);
+    echo '</pre>';
+    echo '<pre>';
+    var_dump($_SESSION);
+    echo '</pre>';
+
 
 }
 

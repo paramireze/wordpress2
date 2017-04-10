@@ -23,7 +23,7 @@
         <div>
             <div class="meta-row">
                 <div class="meta-th">
-                    <label for="job-id" class="dwwp-row-title">Job ID</label>
+                    <label for="job-id" class="dwwp-row-title"><?php _e('Job ID', 'wp-job-listing'); ?></label>
                 </div>
                 <div class="meta-td">
                     <input type="text" name="job_id" id="job_id" value="<?php if ( !empty($dwwp_stored_meta['job_id'])) { echo esc_attr( $dwwp_stored_meta['job_id'][0]); } ?>">
@@ -33,7 +33,7 @@
         <div>
             <div class="meta-row">
                 <div class="meta-th">
-                    <label for="job-title" class="dwwp-row-title">Job Title</label>
+                    <label for="job-title" class="dwwp-row-title"><?php _e('Job Title', 'wp-job-listing'); ?></label>
                 </div>
                 <div class="meta-td">
                     <input type="textarea" name="job_title" id="job_title" value="<?php if ( !empty($dwwp_stored_meta['job_title'])) { echo esc_attr( $dwwp_stored_meta['job_title'][0]); } ?>">
@@ -43,7 +43,7 @@
         <div>
             <div class="meta-row">
                 <div class="meta-th">
-                    <label for="date_listed" class="dwwp-row-title">Date Listed</label>
+                    <label for="date_listed" class="dwwp-row-title"><?php _e('Date Listed', 'wp-job-listing'); ?></label>
                 </div>
                 <div class="meta-td">
                     <input type="text" name="date_listed" class="datepicker" id="date_listed" value="<?php if ( !empty($dwwp_stored_meta['date_listed'])) { echo esc_attr( $dwwp_stored_meta['date_listed'][0]); } ?>">
@@ -53,7 +53,7 @@
         <div>
             <div class="meta-row">
                 <div class="meta-th">
-                    <label for="application_deadline" class="dwwp-row-title">Application Deadline</label>
+                    <label for="application_deadline" class="dwwp-row-title"><?php _e('Application Deadline', 'wp-job-listing'); ?></label>
                 </div>
                 <div class="meta-td">
                     <input type="text" name="application_deadline" class="datepicker" id="application_deadline" value="<?php if ( !empty($dwwp_stored_meta['application_deadline'])) { echo esc_attr( $dwwp_stored_meta['application_deadline'][0]); } ?>">
@@ -62,7 +62,7 @@
         </div>
         <div class="meta">
             <div class="meta-th">
-                <span>Principle Duties</span>
+                <span><?php _e('Principle Duties', ''); ?></span>
             </div>
         </div>
         <div class="meta-editor">
