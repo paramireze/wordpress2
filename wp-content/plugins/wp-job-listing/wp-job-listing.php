@@ -1,10 +1,10 @@
 <?php
 /**
  * Plugin Name: WP Job Listing
- * Plugin URI: http://hatrackmedia.com
+ * Plugin URI: https://github.com/paramireze/wordpress2
  * Description: This plugins allows you to add a simple job listing section to your wordpress website.
  * Author: Paul Ramirez
- * Author URI: https://github.com/paramireze/wordpress2
+ * Author URI: https://github.com/paramireze/
  * Version: 0.0.1
  * License: GPLv2
  */
@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
 }
 
 require ( plugin_dir_path(__FILE__) .'wp-job-cpt.php' );
-require ( plugin_dir_path(__FILE__) .'wp-job-render-admin.php' );
+require ( plugin_dir_path(__FILE__) .'wp-job-settings.php' );
 require ( plugin_dir_path(__FILE__) .'wp-job-fields.php' );
 
 function dwwp_admin_enqueue_scripts() {
@@ -27,20 +27,7 @@ function dwwp_admin_enqueue_scripts() {
         wp_enqueue_script('dwwp-custom-quicktags', plugins_url('js/dwwp-quicktags.js', __FILE__ ), array('quicktags'), '20170206', true);
     }
 }
-add_action('admin_enqueue_scripts', 'dwwp_admin_enqueue_scripts', 'jquery-style', 'dwwp-custom-quicktags');
+add_action('dwwp_admin_enqueue_scripts', 'jquery-style', 'dwwp-custom-quicktags');
 
-function dwwp_add_submenu_page() {
-    add_submenu_page(
-        'edit.php?post_type=job',
-        'Reorder Jobs',
-        'Reorder Jobs',
-        'manage_options',
-        'reorder_jobs',
-        'reorder_admin_jobs_callback'
-    );
-
-}
-
-add_action('admin_menu', 'dwwp_add_submenu_page');
 
 
