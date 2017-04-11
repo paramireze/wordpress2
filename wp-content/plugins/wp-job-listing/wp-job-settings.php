@@ -30,7 +30,7 @@ function reorder_admin_jobs_callback() {
     ?>
     <div id="job-sort" class="wrap">
         <div id="icon-job-admin" class="icon32"><br /></div>
-        <h2><?php _e('Sort Job Positions', 'wp-job-listings') ?> <img src="<?php echo esc_url( admin_url() . 'image/loading.gif'); ?>"></h2>
+        <h2><?php _e('Sort Job Positions', 'wp-job-listings') ?> <img id="loading-animation" src="<?php echo esc_url( admin_url() . 'image/loading.gif'); ?>"></h2>
             <?php if ( $job_listing->have_posts()) :  ?>
                 <p><?php _e('<strong>Note:</strong> this only affects the jobs listed using the shortcodes functions') ?></p>
                 <ul id="custom-type-list">
