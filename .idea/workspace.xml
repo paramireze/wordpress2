@@ -19,7 +19,7 @@
         <entry file="file://$PROJECT_DIR$/wp-content/plugins/wp-job-listing/wp-job-cpt.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-419">
-              <caret line="21" column="6" lean-forward="true" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+              <caret line="21" column="6" lean-forward="false" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -28,8 +28,8 @@
       <file leaf-file-name="wp-job-listing.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/plugins/wp-job-listing/wp-job-listing.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="555">
+              <caret line="37" column="58" lean-forward="false" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
               <folding>
                 <element signature="e#6#309#0#PHP" expanded="true" />
               </folding>
@@ -41,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/wp-content/plugins/wp-job-listing/css/admin-jobs.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -71,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/wp-content/plugins/wp-job-listing/wp-job-fields.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="51" column="14" lean-forward="true" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
+              <caret line="51" column="14" lean-forward="false" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
               <folding>
                 <marker date="1491858434000" expanded="true" signature="848:957" ph="..." />
                 <marker date="1491858434000" expanded="true" signature="1096:1467" ph="..." />
@@ -98,7 +98,7 @@
         <entry file="file://$PROJECT_DIR$/wp-admin/includes/template.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="292">
-              <caret line="885" column="36" lean-forward="true" selection-start-line="885" selection-start-column="33" selection-end-line="885" selection-end-column="36" />
+              <caret line="885" column="36" lean-forward="false" selection-start-line="885" selection-start-column="33" selection-end-line="885" selection-end-column="36" />
               <folding>
                 <marker date="1479040952000" expanded="false" signature="17420:17434" ph="..." />
                 <marker date="1479040952000" expanded="true" signature="17435:17646" ph="..." />
@@ -116,7 +116,7 @@
         <entry file="file://$PROJECT_DIR$/wp-content/plugins/wp-job-listing/wp-job-settings.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+              <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -126,7 +126,7 @@
         <entry file="file://$PROJECT_DIR$/wp-content/plugins/wp-job-listing/js/reorder.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+              <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -136,7 +136,7 @@
         <entry file="file://$PROJECT_DIR$/wp-settings.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="24" column="66" lean-forward="true" selection-start-line="24" selection-start-column="66" selection-end-line="24" selection-end-column="66" />
+              <caret line="24" column="66" lean-forward="false" selection-start-line="24" selection-start-column="66" selection-end-line="24" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -173,9 +173,9 @@
         <option value="$PROJECT_DIR$/wp-content/plugins/wp-job-listing/js/admin-jobs.js" />
         <option value="$PROJECT_DIR$/wp-content/plugins/wp-job-listing/wp-job-render-admin.php" />
         <option value="$PROJECT_DIR$/wp-content/plugins/wp-job-listing/css/admin-jobs.css" />
-        <option value="$PROJECT_DIR$/wp-content/plugins/wp-job-listing/wp-job-listing.php" />
         <option value="$PROJECT_DIR$/wp-content/plugins/wp-job-listing/wp-job-fields.php" />
         <option value="$PROJECT_DIR$/wp-content/plugins/wp-job-listing/wp-job-settings.php" />
+        <option value="$PROJECT_DIR$/wp-content/plugins/wp-job-listing/wp-job-listing.php" />
         <option value="$PROJECT_DIR$/wp-content/plugins/wp-job-listing/js/reorder.js" />
       </list>
     </option>
@@ -940,12 +940,12 @@
       <updated>1491247539417</updated>
       <workItem from="1491247540692" duration="596000" />
       <workItem from="1491252382976" duration="1558000" />
-      <workItem from="1491254462675" duration="46349000" />
+      <workItem from="1491254462675" duration="47815000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48503000" />
+    <option name="totallyTimeSpent" value="49969000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="758" y="28" width="922" height="947" extended-state="0" />
@@ -1142,7 +1142,7 @@
     <entry file="file://$PROJECT_DIR$/wp-settings.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="24" column="66" lean-forward="true" selection-start-line="24" selection-start-column="66" selection-end-line="24" selection-end-column="66" />
+          <caret line="24" column="66" lean-forward="false" selection-start-line="24" selection-start-column="66" selection-end-line="24" selection-end-column="66" />
           <folding />
         </state>
       </provider>
@@ -1150,7 +1150,7 @@
     <entry file="file://$PROJECT_DIR$/wp-admin/includes/template.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
-          <caret line="885" column="36" lean-forward="true" selection-start-line="885" selection-start-column="33" selection-end-line="885" selection-end-column="36" />
+          <caret line="885" column="36" lean-forward="false" selection-start-line="885" selection-start-column="33" selection-end-line="885" selection-end-column="36" />
           <folding>
             <marker date="1479040952000" expanded="false" signature="17420:17434" ph="..." />
             <marker date="1479040952000" expanded="true" signature="17435:17646" ph="..." />
@@ -1174,7 +1174,7 @@
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/wp-job-listing/wp-job-cpt.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-419">
-          <caret line="21" column="6" lean-forward="true" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+          <caret line="21" column="6" lean-forward="false" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1182,7 +1182,7 @@
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/wp-job-listing/css/admin-jobs.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1190,7 +1190,7 @@
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/wp-job-listing/wp-job-fields.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="51" column="14" lean-forward="true" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
+          <caret line="51" column="14" lean-forward="false" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
           <folding>
             <marker date="1491858434000" expanded="true" signature="848:957" ph="..." />
             <marker date="1491858434000" expanded="true" signature="1096:1467" ph="..." />
@@ -1220,28 +1220,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/plugins/wp-job-listing/wp-job-settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/wp-job-listing/wp-job-listing.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="555">
+          <caret line="37" column="58" lean-forward="false" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
           <folding>
             <element signature="e#6#309#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/plugins/wp-job-listing/wp-job-settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/wp-job-listing/js/reorder.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+          <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
           <folding />
         </state>
       </provider>

@@ -14,16 +14,21 @@ jQuery(document).ready(function($) {
                 dataType: 'json',
                 data: {
                     action: 'save_post',
-                    order: sortList.sortable( 'toArray').toString()
+                    order: sortList.sortable( 'toArray').toString(),
+                    security: WP_JOB_LISTING.security
+
                 },
                 success: function( response ) {
+                    $( 'div#message' ).remove();
                     animation.hide();
-                    pageTitle.after('<div class="updated"><p>Jobs sort order has been saved</p></div>')
+                    pageTitle.after('<div id="message" class="updated"><p>' + WP_JOB_LISTING.success + '</p></div>')
 
                 },
                 error: function( error ) {
+                    $( 'div#message' ).remove();
+
                     animation.hide();
-                    pageTitle.after('<div class="error">Failed</div>');
+                    pageTitle.after('<div id="message" class="error">' + WP_JOB_LISTING.failure + '</div>');
                 }
             })
         }
