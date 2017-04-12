@@ -13,15 +13,19 @@ jQuery(document).ready(function($) {
                 type: 'POST',
                 dataType: 'json',
                 data: {
-                    action: 'save_post',
-                    order: sortList.sortable( 'toArray').toString(),
+                    action: 'save_sort',
+                    order: sortList.sortable( 'toArray'),
                     security: WP_JOB_LISTING.security
 
                 },
                 success: function( response ) {
                     $( 'div#message' ).remove();
                     animation.hide();
-                    pageTitle.after('<div id="message" class="updated"><p>' + WP_JOB_LISTING.success + '</p></div>')
+                    if (true == response.success) {
+                        pageTitle.after('<div id="message" class="updated"><p>' + WP_JOB_LISTING.success + '</p></div>')
+                    } else {
+                        pageTitle.after('<div id="message" class="error">' + WP_JOB_LISTING.failure + '</div>');
+                    }
 
                 },
                 error: function( error ) {

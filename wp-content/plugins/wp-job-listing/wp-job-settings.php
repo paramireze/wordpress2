@@ -17,13 +17,13 @@ add_action('admin_menu', 'dwwp_add_submenu_page');
 function reorder_admin_jobs_callback() {
     global $typenow, $pagenow;
     $args = array(
-//        'post_type' => 'job',
-//        'orderby' => 'menu_order',
-//        'order' => 'ASC',
-//        'no_found_rows' => true,
-//        'update_post_term_cache' => false,
-//        'post_per_post' => 50
-        'category_name' => 'cat-a'
+        'post_type' => 'job',
+        'orderby' => 'menu_order',
+        'order' => 'ASC',
+        'no_found_rows' => true,
+        'update_post_term_cache' => false,
+        'post_per_post' => 50
+//        'category_name' => 'cat-a'
     );
 
     $job_listing = new WP_Query($args);
@@ -42,13 +42,36 @@ function reorder_admin_jobs_callback() {
             <?php endif; ?>
     </div>
     <?php
-    echo '<pre>';
-    var_dump($typenow);
-    echo '</pre>';
-    echo '<pre>';
-    var_dump($_SESSION);
-    echo '</pre>';
+}
 
+function dwwp_save_reorder() {
+
+    if ( ! check_ajax_referer( 'wp-job-order', 'security' ) ) {
+        return wp_send_json_error( 'Invalid Nonce' );
+    }
+
+    if ( ! current_user_can( 'manage_options' ) ) {
+        return wp_send_json_error( 'You are not allowed to do this' );
+    }
+
+    $order = $_POST['order'];
+    $counter = 0;
+
+    foreach( $order as $item_id ) {
+
+        $post = array(
+            'ID' => (int)$item_id,
+            'menu_order' => $counter
+        );
+
+        wp_update_post( $post );
+
+        $counter++;
+
+    }
+
+    wp_send_json_success( 'Post Saved' );
 
 }
 
+add_action( 'wp_ajax_save_sort', 'dwwp_save_reorder' );
