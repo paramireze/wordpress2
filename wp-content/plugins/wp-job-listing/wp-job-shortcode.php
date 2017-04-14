@@ -32,3 +32,36 @@ function dwwp_job_taxonomy_list( $atts, $content = null ) {
 }
 
 add_shortcode( 'job_location_list', "dwwp_job_taxonomy_list" );
+
+function dwwp_list_job_by_location( $atts, $content = null ) {
+    $atts = shortcode_atts( array(
+        'title' => 'Current Job Openings in',
+        'count' => 5,
+        'location' => '',
+        'pagination' =>false
+    ), $atts );
+
+    $paged = get_query_var('paged') ? get_query_var( 'paged' ) : 1;
+
+    $args = array(
+        'post_type' => 'job',
+        'post_status' => 'publish',
+        'no_found_rows' => $atts['pagination'],
+        'posts_per_page' => $atts['count'],
+        'paged' => $paged,
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'location',
+                'field' => 'slug',
+                'terms' => $atts['location'],
+            )
+        )
+    );
+
+    $jobs_by_location = new WP_Query( $args );
+
+    echo '<pre>';
+    var_dump($jobs_by_location);
+}
+
+add_shortcode('jobs_by_location', 'dwwp_list_job_by_location');
