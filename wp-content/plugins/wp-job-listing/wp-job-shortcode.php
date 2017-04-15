@@ -42,15 +42,17 @@ function dwwp_list_job_by_location( $atts, $content = null ) {
         'title' => 'Current Job Openings in',
         'count' => 5,
         'location' => '',
-        'pagination' => false
+        'pagination' => 'off'
     ), $atts);
+
+    $pagination = $atts['pagination'] == 'on' ? false : true;
 
     $paged = get_query_var('paged') ? get_query_var('paged') : 1;
 
     $args = array(
         'post_type' => 'job',
         'post_status' => 'publish',
-        'no_found_rows' => $atts['pagination'],
+        'no_found_rows' => $pagination,
         'posts_per_page' => $atts['count'],
         'paged' => $paged,
         'tax_query' => array(
@@ -89,6 +91,19 @@ function dwwp_list_job_by_location( $atts, $content = null ) {
         $display_by_location .= '</div>';
 
         wp_reset_postdata();
+
+        if ( $jobs_by_location->max_num_pages > 1 && is_page() ) {
+
+            $display_by_location .= '<nav class="prev-next-posts">';
+            $display_by_location .= '<div class="nav-previous">';
+            $display_by_location .= get_next_posts_link(__( '<span class="meta-nav">&larr;</span> Previous' ), $jobs_by_location->max_num_pages );
+            $display_by_location .= '</div>';
+            $display_by_location .= '<nav class="next-posts-link">';
+            $display_by_location .= get_previous_posts_link(__( ' Next <span class="meta-nav">&rarr;</span>' ));
+            $display_by_location .= '</div>';
+            $display_by_location .='</nav>';
+
+        }
 
         endif;
 
