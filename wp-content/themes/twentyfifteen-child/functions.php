@@ -75,5 +75,13 @@ function process_user_generated_post() {
     }
     wp_send_json_success( $post_id );
 }
+
+function twentyfourteen_child_theme_scripts() {
+
+    wp_enqueue_script( 'extra js', get_stylesheet_directory_uri() . '/js/functions.js' );
+
+}
+
+add_action( 'wp_enqueue_scripts', 'twentyfourteen_child_theme_scripts' );
 add_action( 'wp_ajax_process_user_generated_post', 'process_user_generated_post' );
 add_action( 'wp_ajax_nopriv_process_user_generated_post', 'process_user_generated_post' );
