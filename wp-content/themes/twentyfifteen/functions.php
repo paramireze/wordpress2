@@ -281,7 +281,10 @@ function twentyfifteen_scripts() {
 	wp_localize_script( 'twentyfifteen-script', 'screenReaderText', array(
 		'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'twentyfifteen' ) . '</span>',
 		'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'twentyfifteen' ) . '</span>',
-	) );
+        'adminAjax' => admin_url( 'admin-ajax.php'),
+        'security' => wp_create_nonce( 'user-submitted-question' )
+
+    ) );
 }
 add_action( 'wp_enqueue_scripts', 'twentyfifteen_scripts' );
 
