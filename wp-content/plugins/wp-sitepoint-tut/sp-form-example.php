@@ -51,10 +51,6 @@ function deliver_mail() {
         // If email has been process for sending, display a success message
         if ( wp_mail( $to, $subject, $message, $headers ) ) {
 
-            echo '<pre>';
-            print_r($_POST);
-            echo '</pre>';
-            die();
             echo '<div>';
             echo '<p>Thanks for contacting me, expect a response soon.</p>';
             echo '</div>';
