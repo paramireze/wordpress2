@@ -1,6 +1,6 @@
 <?php
 
-function dwwp_add_submenu_page() {
+function hash_add_submenu_page() {
     add_submenu_page(
         'edit.php?post_type=announcement',
         'Reorder Announcements',
@@ -12,7 +12,7 @@ function dwwp_add_submenu_page() {
 
 }
 
-add_action('admin_menu', 'dwwp_add_submenu_page');
+add_action('admin_menu', 'hash_add_submenu_page');
 
 function reorder_admin_announcements_callback() {
     global $typenow, $pagenow;
@@ -44,7 +44,7 @@ function reorder_admin_announcements_callback() {
     <?php
 }
 
-function dwwp_save_reorder() {
+function hash_save_reorder() {
 
     if ( ! check_ajax_referer( 'wp-announcements-order', 'security' ) ) {
         return wp_send_json_error( 'Invalid Nonce' );
@@ -74,4 +74,4 @@ function dwwp_save_reorder() {
 
 }
 
-add_action( 'wp_ajax_save_sort', 'dwwp_save_reorder' );
+add_action( 'wp_ajax_save_sort', 'hash_save_reorder' );

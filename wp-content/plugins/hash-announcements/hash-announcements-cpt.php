@@ -1,6 +1,6 @@
 <?php
 
-function dwwp_register_post_type()
+function hash_register_post_type()
 {
 
     $singular = 'Announcement';
@@ -56,4 +56,4 @@ function dwwp_register_post_type()
     register_post_type('announcement', $args);
 }
 
-add_action('init', 'dwwp_register_post_type');
+add_action('init', 'hash_register_post_type');

@@ -21,17 +21,17 @@ require_once ( plugin_dir_path(__FILE__) .  'hash-announcements-settings.php' );
 require_once ( plugin_dir_path(__FILE__) .  'hash-announcements-fields.php' );
 require_once ( plugin_dir_path(__FILE__) .  'hash-announcements-shortcode.php' );
 
-function dwwp_admin_enqueue_scripts() {
+function hash_admin_enqueue_scripts() {
     global $pagenow, $typenow;
 
     if ($typenow == 'announcement') {
-        wp_enqueue_style('dwwp-admin-css', plugins_url('css/admin-announcements.css', __FILE__));
+        wp_enqueue_style('hash-admin-css', plugins_url('css/admin-announcements.css', __FILE__));
     }
 
     if (($pagenow == 'post.php' || $pagenow == 'post-new.php') && $typenow == 'announcement') {
-        wp_enqueue_script('dwwp-announcement-js', plugins_url('js/admin-announcements.js', __FILE__), array('jquery', 'jquery-ui-datepicker'), '20170331', false );
+        wp_enqueue_script('hash-announcement-js', plugins_url('js/admin-announcements.js', __FILE__), array('jquery', 'jquery-ui-datepicker'), '20170331', false );
         wp_enqueue_style('jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css' );
-        wp_enqueue_script('dwwp-custom-quicktags', plugins_url('js/dwwp-quicktags.js', __FILE__ ), array('quicktags'), '20170206', true);
+        wp_enqueue_script('hash-custom-quicktags', plugins_url('js/hash-quicktags.js', __FILE__ ), array('quicktags'), '20170206', true);
     }
 
     if ($pagenow == 'edit.php' && $typenow == 'announcement') {
@@ -44,6 +44,6 @@ function dwwp_admin_enqueue_scripts() {
     }
 
 }
-add_action('admin_enqueue_scripts', 'dwwp_admin_enqueue_scripts', 'jquery-style', 'dwwp-custom-quicktags');
+add_action('admin_enqueue_scripts', 'hash_admin_enqueue_scripts', 'jquery-style', 'hash-custom-quicktags');
 
 

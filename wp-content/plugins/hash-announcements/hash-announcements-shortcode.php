@@ -1,6 +1,6 @@
 <?php
 
-function dwwp_list_announcements( $atts, $content = null ) {
+function hash_list_announcements( $atts, $content = null ) {
 
     $atts = shortcode_atts(array(
         'title' => 'Announcement',
@@ -66,4 +66,4 @@ function dwwp_list_announcements( $atts, $content = null ) {
     return $display_announcement;
 }
 
-add_shortcode('hash_announcement', 'dwwp_list_announcements');
+add_shortcode('hash_announcement', 'hash_list_announcements');

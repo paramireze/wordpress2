@@ -1,52 +1,52 @@
 <?php
-function dwwp_add_custom_metabox() {
+function hash_add_custom_metabox() {
     add_meta_box(
-        "dwwp_meta",
+        "hash_meta",
         "Announcement Listing",
-        "dwwp_meta_callback",
+        "hash_meta_callback",
         "announcement",
         "normal",
         "core"
     );
 }
 
-add_action('add_meta_boxes', 'dwwp_add_custom_metabox');
+add_action('add_meta_boxes', 'hash_add_custom_metabox');
 
-function dwwp_meta_callback($post) {
+function hash_meta_callback($post) {
     // nonce - ensure your form data came from your form
-    wp_nonce_field(basename(__FILE__), 'dwwp_announcements_nonce');
+    wp_nonce_field(basename(__FILE__), 'hash_announcements_nonce');
 
     // gets data from the database from post meta column
-    $dwwp_stored_meta = get_post_meta( $post->ID );
+    $hash_stored_meta = get_post_meta( $post->ID );
 
     ?>
     <div>
         <div class="meta-row">
             <div class="meta-th">
-                <label for="announcement-id" class="dwwp-row-title"><?php _e('Announcement ID', 'wp-announcement-listing'); ?></label>
+                <label for="announcement-id" class="hash-row-title"><?php _e('Announcement ID', 'wp-announcement-listing'); ?></label>
             </div>
             <div class="meta-td">
-                <input type="text" name="announcement_id" id="announcement_id" value="<?php if ( !empty($dwwp_stored_meta['announcement_id'])) { echo esc_attr( $dwwp_stored_meta['announcement_id'][0]); } ?>">
+                <input type="text" name="announcement_id" id="announcement_id" value="<?php if ( !empty($hash_stored_meta['announcement_id'])) { echo esc_attr( $hash_stored_meta['announcement_id'][0]); } ?>">
             </div>
         </div>
     </div>
     <div>
         <div class="meta-row">
             <div class="meta-th">
-                <label for="announcement-title" class="dwwp-row-title"><?php _e('Announcement Title', 'wp-announcement-listing'); ?></label>
+                <label for="announcement-title" class="hash-row-title"><?php _e('Announcement Title', 'wp-announcement-listing'); ?></label>
             </div>
             <div class="meta-td">
-                <input type="textarea" name="announcement_title" id="announcement_title" value="<?php if ( !empty($dwwp_stored_meta['announcement_title'])) { echo esc_attr( $dwwp_stored_meta['announcement_title'][0]); } ?>">
+                <input type="textarea" name="announcement_title" id="announcement_title" value="<?php if ( !empty($hash_stored_meta['announcement_title'])) { echo esc_attr( $hash_stored_meta['announcement_title'][0]); } ?>">
             </div>
         </div>
     </div>
     <div>
         <div class="meta-row">
             <div class="meta-th">
-                <label for="date_listed" class="dwwp-row-title"><?php _e('Date Listed', 'wp-announcement-listing'); ?></label>
+                <label for="date_listed" class="hash-row-title"><?php _e('Date Listed', 'wp-announcement-listing'); ?></label>
             </div>
             <div class="meta-td">
-                <input type="text" name="date_listed" class="datepicker" id="date_listed" value="<?php if ( !empty($dwwp_stored_meta['date_listed'])) { echo esc_attr( $dwwp_stored_meta['date_listed'][0]); } ?>">
+                <input type="text" name="date_listed" class="datepicker" id="date_listed" value="<?php if ( !empty($hash_stored_meta['date_listed'])) { echo esc_attr( $hash_stored_meta['date_listed'][0]); } ?>">
             </div>
         </div>
     </div>
@@ -71,10 +71,10 @@ function dwwp_meta_callback($post) {
     <?php
 }
 
-function dwwp_meta_save($post_id) {
+function hash_meta_save($post_id) {
     $is_autosave = wp_is_post_autosave( $post_id );
     $is_revision = wp_is_post_revision($post_id);
-    $is_valid_nonce = (isset($_POST['dwwp_announcements_nonce']) && wp_verify_nonce($_POST['dwwp_announcements_nonce'], basename(__FILE__))) ? 'true' : 'false';
+    $is_valid_nonce = (isset($_POST['hash_announcements_nonce']) && wp_verify_nonce($_POST['hash_announcements_nonce'], basename(__FILE__))) ? 'true' : 'false';
 
     if ($is_autosave || $is_revision || !$is_valid_nonce) {
         return;
@@ -98,4 +98,4 @@ function dwwp_meta_save($post_id) {
     }
 }
 
-add_action('save_post', 'dwwp_meta_save');
+add_action('save_post', 'hash_meta_save');
