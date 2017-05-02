@@ -1,7 +1,6 @@
 <?php
 
 function hash_list_announcements( $atts, $content = null ) {
-
     $atts = shortcode_atts(array(
         'title' => 'Announcement',
         'count' => 5,
@@ -27,23 +26,23 @@ function hash_list_announcements( $atts, $content = null ) {
     if ($announcement->have_posts())  :
 
         $display_announcement = '<h4>' . esc_html__($atts["title"]) . '</h4>';
-        $display_announcement .= '<ul>';
 
         while ($announcement->have_posts()) : $announcement->the_post();
             global $post;
 
+
             $announcement_body = get_post_meta(get_the_ID(), 'announcement_body', true);
             $title = get_the_title();
             $slug = get_permalink();
+            $announcement_body = get_the_content();
 
-            $display_announcement .= '<li class="hash-listing">';
+            $display_announcement .= '<div>';
             $display_announcement .= sprintf('<a href="%s">%s</a>&nbsp&nbsp', esc_url($slug), esc_html__($title));
-            $display_announcement .= '<span>' . esc_html($announcement_body) . '</span>';
-            $display_announcement .= '</li>';
+            $display_announcement .= '<span>' . get_the_ID() . ' '  . esc_html($announcement_body) . '</span>';
+            $display_announcement .= '</div><hr />';
 
         endwhile;
 
-        $display_announcement .= '</ul>';
         $display_announcement .= '</div>';
 
         wp_reset_postdata();
