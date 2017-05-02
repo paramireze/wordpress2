@@ -14,7 +14,7 @@ function hash_list_announcements( $atts, $content = null ) {
 //    $paged = get_query_var('paged') ? get_query_var('paged') : 1;
 
     $args = array(
-        'post_type' => 'announcement',
+        'post_type' => 'announcements',
 //        'post_status' => 'publish',
 //        'no_found_rows' => $pagination,
 //        'posts_per_page' => $atts['count'],
@@ -26,7 +26,7 @@ function hash_list_announcements( $atts, $content = null ) {
 
     if ($announcement->have_posts())  :
 
-        $display_announcement .= '<h4>' . esc_html__($atts["title"]) . '&nbsp' . esc_html__(ucwords($location)) . '</h4>';
+        $display_announcement = '<h4>' . esc_html__($atts["title"]) . '</h4>';
         $display_announcement .= '<ul>';
 
         while ($announcement->have_posts()) : $announcement->the_post();
@@ -36,7 +36,7 @@ function hash_list_announcements( $atts, $content = null ) {
             $title = get_the_title();
             $slug = get_permalink();
 
-            $display_announcement .= '<li class="job-listing">';
+            $display_announcement .= '<li class="hash-listing">';
             $display_announcement .= sprintf('<a href="%s">%s</a>&nbsp&nbsp', esc_url($slug), esc_html__($title));
             $display_announcement .= '<span>' . esc_html($announcement_body) . '</span>';
             $display_announcement .= '</li>';
