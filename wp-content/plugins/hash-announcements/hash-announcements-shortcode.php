@@ -1,6 +1,7 @@
 <?php
 
 function hash_list_announcements( $atts, $content = null ) {
+
     $atts = shortcode_atts(array(
         'title' => 'Announcement',
         'count' => 5,
@@ -8,24 +9,36 @@ function hash_list_announcements( $atts, $content = null ) {
         'pagination' => 'off'
     ), $atts);
 
-//    $pagination = $atts['pagination'] == 'on' ? false : true;
+    if ( isset( $_GET['id'] ) ) {
 
-//    $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+        $announcementID = $_GET['id'];
+        $args = array(
+            'post_type' => 'announcements',
+            'p' => $announcementID
+        );
 
-    $args = array(
-        'post_type' => 'announcements',
-//        'post_status' => 'publish',
-//        'no_found_rows' => $pagination,
-//        'posts_per_page' => $atts['count'],
-//        'paged' => $paged,
+        return displayAnnouncement($args);
 
-    );
+    } else {
 
+        $args = array(
+            'post_type' => 'announcements'
+        );
+
+        return displayAllAnnouncements($args);
+
+    }
+}
+
+add_shortcode('hash_announcements', 'hash_list_announcements');
+
+function displayAnnouncement($args) {
     $announcement = new WP_Query($args);
 
     if ($announcement->have_posts())  :
 
-        $display_announcement = '<h4>' . esc_html__($atts["title"]) . '</h4>';
+        $display_announcement = '';
+        //$display_announcement = '<h4>' . esc_html__($atts["title"]) . '</h4>';
 
         while ($announcement->have_posts()) : $announcement->the_post();
             global $post;
@@ -33,12 +46,12 @@ function hash_list_announcements( $atts, $content = null ) {
 
             $announcement_body = get_post_meta(get_the_ID(), 'announcement_body', true);
             $title = get_the_title();
-            $slug = get_permalink();
+            $id = get_the_ID();
+            $slug = get_permalink( get_page_by_path( 'announcements' ) );
             $announcement_body = get_the_content();
-
             $display_announcement .= '<div>';
-            $display_announcement .= sprintf('<a href="%s">%s</a>&nbsp&nbsp', esc_url($slug), esc_html__($title));
-            $display_announcement .= '<span>' . get_the_ID() . ' '  . esc_html($announcement_body) . '</span>';
+            $display_announcement .= sprintf('<a href="%s">%s</a>&nbsp&nbsp', esc_url($slug . '?id=' . $id), esc_html__($title));
+            $display_announcement .= '<div>' . get_the_ID() . ' '  . esc_html($announcement_body) . '</div>';
             $display_announcement .= '</div><hr />';
 
         endwhile;
@@ -47,22 +60,44 @@ function hash_list_announcements( $atts, $content = null ) {
 
         wp_reset_postdata();
 
-//        if ( $announcement->max_num_pages > 1 && is_page() ) {
-//
-//            $display_announcement .= '<nav class="prev-next-posts">';
-//            $display_announcement .= '<div class="nav-previous">';
-//            $display_announcement .= get_next_posts_link(__( '<span class="meta-nav">&larr;</span> Previous' ), $announcement->max_num_pages );
-//            $display_announcement .= '</div>';
-//            $display_announcement .= '<nav class="next-posts-link">';
-//            $display_announcement .= get_previous_posts_link(__( ' Next <span class="meta-nav">&rarr;</span>' ));
-//            $display_announcement .= '</div>';
-//            $display_announcement .='</nav>';
-//
-//        }
+    endif;
+
+    return $display_announcement;
+
+}
+
+
+function displayAllAnnouncements($args) {
+    $announcement = new WP_Query($args);
+
+    if ($announcement->have_posts())  :
+
+        $display_announcement = '';
+        //$display_announcement = '<h4>' . esc_html__($atts["title"]) . '</h4>';
+
+        while ($announcement->have_posts()) : $announcement->the_post();
+            global $post;
+
+
+            $announcement_body = get_post_meta(get_the_ID(), 'announcement_body', true);
+            $title = get_the_title();
+            $id = get_the_ID();
+            $slug = get_permalink( get_page_by_path( 'announcements' ) );
+            $announcement_body = get_the_content();
+            $display_announcement .= '<div>';
+            $display_announcement .= sprintf('<a href="%s">%s</a>&nbsp&nbsp', esc_url($slug . '?id=' . $id), esc_html__($title));
+//            $display_announcement .= '<div>' . get_the_ID() . ' '  . esc_html($announcement_body) . '</div>';
+            $display_announcement .= '</div><hr />';
+
+        endwhile;
+
+        $display_announcement .= '</div>';
+
+        wp_reset_postdata();
 
     endif;
 
     return $display_announcement;
+
 }
 
-add_shortcode('hash_announcement', 'hash_list_announcements');
