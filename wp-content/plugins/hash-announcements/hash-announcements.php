@@ -16,9 +16,9 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-//require_once ( plugin_dir_path(__FILE__) .  'hash-announcements-cpt.php' );
-//require_once ( plugin_dir_path(__FILE__) .  'hash-announcements-settings.php' );
-//require_once ( plugin_dir_path(__FILE__) .  'hash-announcements-fields.php' );
+require_once ( plugin_dir_path(__FILE__) .  'hash-announcements-cpt.php' );
+require_once ( plugin_dir_path(__FILE__) .  'hash-announcements-settings.php' );
+require_once ( plugin_dir_path(__FILE__) .  'hash-announcements-fields.php' );
 require_once ( plugin_dir_path(__FILE__) .  'hash-announcements-shortcode.php' );
 
 
