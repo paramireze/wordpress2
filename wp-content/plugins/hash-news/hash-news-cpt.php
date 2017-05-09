@@ -1,10 +1,10 @@
 <?php
 
-function hash_register_post_type()
+function hash_news_register_post_type()
 {
 
-    $singular = 'News';
-    $plural = 'News';
+    $singular = 'Hash-News';
+    $plural = 'Hash-News';
     $labels = array(
         'name'                  => $plural,
         'singular'              => $singular,
@@ -40,7 +40,7 @@ function hash_register_post_type()
         'capability_type'       => 'post',
         'map_meta_cap'          => true,
         'rewrite'               => array(
-            'slug'          => 'announcements',
+            'slug'          => 'hash-news',
             'with_front'    => true,
             'pages'         => true,
             'feeds'         => true
@@ -56,4 +56,4 @@ function hash_register_post_type()
     register_post_type('hash-news', $args);
 }
 
-add_action('init', 'hash_register_post_type');
+add_action('init', 'hash_news_register_post_type');

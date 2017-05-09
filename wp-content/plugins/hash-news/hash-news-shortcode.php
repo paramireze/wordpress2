@@ -3,7 +3,7 @@
 function hash_list_news( $atts, $content = null ) {
 
     $atts = shortcode_atts(array(
-        'title' => 'News',
+        'title' => 'Hash News',
         'count' => 5,
         'news_body' => '',
         'pagination' => 'off'
@@ -13,7 +13,7 @@ function hash_list_news( $atts, $content = null ) {
 
         $newsID = $_GET['id'];
         $args = array(
-            'post_type' => 'news',
+            'post_type' => 'hash_news',
             'p' => $newsID
         );
 
@@ -22,7 +22,7 @@ function hash_list_news( $atts, $content = null ) {
     } else {
 
         $args = array(
-            'post_type' => 'news'
+            'post_type' => 'hash news'
         );
 
         return displayAllNews($args);
